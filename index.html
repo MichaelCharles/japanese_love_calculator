@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>恋愛計算機</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="normalize.css">
+
+      <link rel="stylesheet" href="style.css">
+
+  
+</head>
+
+<body>
+  <div id="wrapper">
+    
+<div class="container card" id="initial-prompt">
+    <h1>恋愛計算機</h1>
+    <p id="name1-label">自分の名前</p>
+<input type="text" id="name1">
+<p id="name2-label">相手の名前</p>
+<input type="text" id="name2">
+    <p id="warning">両方の名前を記入する必要があります。</p>
+    <p class="align-right"><button id="calculate">計算</button></p>
+</div>
+    <div class="container" id="calculating">
+        <div id="loading" class="material-spinner"></div>
+        <p id="div-msg">&nbsp;</p>
+    </div>
+    <div class="container card" id="results">
+        <h1>結果！</h1>
+        <p id="love-results">&nbsp;</p>
+        <p>見ているものが気に入らない？未来は決まっているのではなく、星に書かれているのです! 夜空を漂う星々のように、あなたの未来も変えることができるのです。あなたが強く信じれば、何でも可能なのです。後で、あなたの確率が上がったかどうか、確認してみてください。</p>
+        <p class="align-right"><button id="try-again">もう一回</button></p>
+    </div>
+</div>
+  <script src='jquery.js'></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

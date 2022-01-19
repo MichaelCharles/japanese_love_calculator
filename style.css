@@ -1,0 +1,272 @@
+body {
+  background: #f44336;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+#wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.card {
+  background: white;
+  margin: 1em;
+  padding: 1em;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px 0px rgba(33, 33, 33, 0.15),
+    0px 6px 10px 0px rgba(33, 33, 33, 0.15);
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  max-width: 400px;
+  width: 100%;
+}
+
+input[type="text"] {
+  padding: 0;
+  line-height: 2;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+  outline: none;
+  border: 0px;
+  margin-bottom: 1px;
+  border-bottom: 1px #b0b0b0 solid;
+}
+
+input[type="text"]:focus {
+  border-bottom: 2px #e91e63 solid;
+  margin-bottom: 0px;
+  transition: all 500ms ease;
+}
+
+button {
+  background: #e91e63;
+  color: white;
+  outline: none;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  border: 0;
+  border-radius: 4px;
+  line-height: 2.5;
+  padding: 0 1em;
+  margin: 0;
+  text-transform: uppercase;
+  box-shadow: 0px 4px 8px 0px rgba(33, 33, 33, 0.15),
+    0px 6px 10px 0px rgba(33, 33, 33, 0.15);
+  transition: all ease 500ms;
+  position: relative;
+}
+
+button:hover {
+  background: #ff3e83;
+  box-shadow: 0px 6px 10px 0px rgba(33, 33, 33, 0.15),
+    0px 6px 10px 0px rgba(33, 33, 33, 0.15);
+  top: -1px;
+}
+
+button:active {
+  top: 1px;
+  background: #c90043;
+}
+
+.align-right {
+  text-align: right;
+}
+
+#warning {
+  color: red;
+  opacity: 0;
+}
+
+#results {
+  display: none;
+}
+
+#calculating {
+  color: white;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: bold;
+  text-align: left;
+  max-width: 155px;
+  width: 100%;
+}
+
+#div-msg {
+  margin-top: 1em;
+  color: #ffcdd2;
+}
+
+#loading {
+  margin: 0 auto;
+}
+
+.material-spinner {
+  /* The height and width can be
+    whatever you want, so long as
+    you adjust the border radius
+    to compensate. I added a 
+    "max-height" because for some
+    reason the spinner was
+    "squishing" when I resized the
+    screen vertically. "max-height"
+    fixed this. */
+  height: 50px;
+  min-height: 50px;
+  width: 50px;
+  /* "border-radius" defines how
+    much "curve" there is on the
+    edge of a square element. If
+    you give it enough curve, it
+    makes the element appear to be
+    circular. */
+  border-radius: 100px;
+  /* So there's a five pixel
+    transparent solid border
+    around a 50px square box, which
+    has edges curved so much that
+    it looks circular... */
+  border: 5px transparent solid;
+  /* ... with one side, the top
+    border, given a color. This
+    creates the quarter-circle 
+    curve. */
+  border-top: 5px #3f51b5 solid;
+  /* "animation" specifies an
+    animation to use on the element,
+    including how long the animation
+    should take, how many times it 
+    should play, and even whether 
+    or not it should ease into the
+    different steps of the animation.
+    By default the animation eases,
+    which is what we want for our
+    Google-esque spinner, so we 
+    don't need to set that. 
+    
+    The "material-spinner" part is
+    the name of the animation that 
+    we want to use. We could've
+    called it "funky-bunny" or
+    anything else so long as we 
+    use the same name when
+    specifying the keyframes. */
+  -webkit-animation: material-spinner 4s infinite;
+  animation: material-spinner 4s infinite;
+}
+
+@-webkit-keyframes material-spinner {
+  /* "material-spinner" is the name
+    of the animation. Each percentage
+    represents an individual step
+    in the animation. The transform
+    rotation needs to increase from
+    0 throughout. If you did 
+    "rotate(0deg)" then 
+    "rotate(180deg)" and then 
+    "rotate(0deg)" back again,
+    instead of continously spinning
+    right, it would spin right,
+    then left, then right.*/
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-top: 5px #cbff74 solid;
+  }
+  25% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    border-top: 5px #e8b85f solid;
+  }
+  50% {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+    border-top: 5px #8d5ee8 solid;
+  }
+  75% {
+    -webkit-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+    border-top: 5px #69ebff solid;
+  }
+  100% {
+    -webkit-transform: rotate(1440deg);
+    transform: rotate(1440deg);
+    border-top: 5px #cbff74 solid;
+  }
+}
+
+@keyframes material-spinner {
+  /* "material-spinner" is the name
+    of the animation. Each percentage
+    represents an individual step
+    in the animation. The transform
+    rotation needs to increase from
+    0 throughout. If you did 
+    "rotate(0deg)" then 
+    "rotate(180deg)" and then 
+    "rotate(0deg)" back again,
+    instead of continously spinning
+    right, it would spin right,
+    then left, then right.*/
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-top: 5px #cbff74 solid;
+  }
+  25% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    border-top: 5px #e8b85f solid;
+  }
+  50% {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+    border-top: 5px #8d5ee8 solid;
+  }
+  75% {
+    -webkit-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+    border-top: 5px #69ebff solid;
+  }
+  100% {
+    -webkit-transform: rotate(1440deg);
+    transform: rotate(1440deg);
+    border-top: 5px #cbff74 solid;
+  }
+}
+
+#calculating {
+  display: none;
+}
+
+.ht {
+  opacity: 0;
+}
+
+.strong {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #f44336;
+}
