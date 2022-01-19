@@ -44,11 +44,11 @@ $(document).ready(function () {
   setInterval(function () {
     rndMsg();
   }, 1200);
-  $("#name1-label").click(function () {
-    $("#name1").focus();
+  $("#input1-label").click(function () {
+    $("#input1").focus();
   });
-  $("#name2-label").click(function () {
-    $("#name2").focus();
+  $("#input2-label").click(function () {
+    $("#input2").focus();
   });
   $("input").keypress(function (e) {
     if (e.which == 13) {
@@ -57,12 +57,12 @@ $(document).ready(function () {
   });
 
   $("#calculate").click(function () {
-    var name1 = $("#name1").val();
-    var name2 = $("#name2").val();
+    var input1 = $("#input1").val();
+    var input2 = $("#input2").val();
 
-    if (name1.length > 0 && name2.length > 0) {
-      var seed = name1.length + name2.length;
-      var megaName = name1 + " " + name2;
+    if (input1.length > 0 && input2.length > 0) {
+      var seed = input1.length + input2.length;
+      var megaName = input1 + " " + input2;
       var today = new Date();
       var love = 0;
       megaName = megaName.split("");
@@ -90,9 +90,9 @@ $(document).ready(function () {
               setTimeout(function () {
                 $("#love-results").html(
                   "現在の" +
-                    name1 +
+                    input1 +
                     "と" +
-                    name2 +
+                    input2 +
                     "の相性は<span class='strong'>" +
                     love +
                     "%</span>です。"
@@ -123,11 +123,11 @@ $(document).ready(function () {
       width: "100%",
       opacity: 1,
     });
-    $("#name1").val("");
-    $("#name2").val("");
+    $("#input1").val("");
+    $("#input2").val("");
     $("#results").fadeOut(300, function () {
       $("#initial-prompt").fadeIn(300, function () {
-        $("#name1").focus();
+        $("#input1").focus();
       });
     });
   });
